@@ -1,0 +1,14 @@
+import webbrowser as wb
+
+wb.open()
+
+
+a = 2
+b = 5
+c = 9
+
+def summ(a,b,c)
+    summm = a + b + c
+    print(summm)
+
+sammm    
