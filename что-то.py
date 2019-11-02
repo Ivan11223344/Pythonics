@@ -15,9 +15,9 @@ pole3 = Entry(width=25)
 
 bt1 = Button(text="загрузить",command = change_labal)
 
-l1 = Label("фамилия")
-l2 = Label("имя")
-l3 = Label("номер телефона")
+l1 = Label(text="фамилия")
+l2 = Label(text="имя")
+l3 = Label(text="номер телефона")
 
 pole1.grid(row=0,column=0)
 pole2.grid(row=0,column=1)
