@@ -9,12 +9,26 @@ def create():
     pole1.delete(0,END)
     pole2.delete(0,END)
 
+def poper():
+    index = Lb.curselection()[0]
+    Lb.delete(index)      
+
+def deleted():
+    index = Lb.curselection()[0]
+    E1=pole1.get()
+    E2=pole2.get()
+    Lb.delete(index)
+    result=E1 + " - " + E2
+    Lb.insert(END,result)
+    pole1.delete(0,END)
+    pole2.delete(0,END)
+
 pole1 = Entry(width=25)
 pole2 = Entry(width=25)
 
-but1 = Button(text="загрузить",command=create)
-but2 = Button(text="удалить")
-but3 = Button(text="изменить")
+but1 = Button(text="загрузить",command=create,bg="green")
+but2 = Button(text="удалить",command=poper,bg="red")
+but3 = Button(text="изменить",command=deleted,bg="blue")
 
 l1 = Label(text="имя")
 l2 = Label(text="телефон")
