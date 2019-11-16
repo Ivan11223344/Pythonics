@@ -3,6 +3,12 @@ from tkinter import*
 click = 0 
 
 def click_button():
+  
+    r = ["Linux", "Python", "Tk", "Tkiner"]
+    lis = Listbox(root,selectmode=SINGLE,hight=4)
+    for i in r:
+        lis.insert(END,i)
+   
     global click
     click += 1
     btn.config(text="clicks {}".format(click))
