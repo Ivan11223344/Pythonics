@@ -3,6 +3,24 @@ root = Tk()
 from tkinter import filedialog as fd
 img = PhotoImage(file="avatar.png")
 
+massiv = [1,2,3,4,5,6]
+
+
+
+# for x in massiv:
+#     print(enumerate(massiv))
+
+# def reg():
+#     for x in massiv:
+#         x = x.lower()
+#     return massiv
+
+# massive = ['Петров','Иванов','Иванов']
+# print(massiv[1].lover())
+# print(sorted(reg(massiv)))
+
+x = x.lower()
+
 def create():
     E1=pole1.get()
     E2=pole2.get()
@@ -10,16 +28,17 @@ def create():
     E4=pole4.get()
     result=E1 + " " + E2 + " *" + E3 + "*" + " - " + E4
     Lb.insert(END,result)
-    pole1.delete(0,END)
+    g=[x fof x in Lb]
+    pole1.delefte(0,END)
     pole2.delete(0,END)
     pole3.delete(0,END)
     pole4.delete(0,END)
 
-def poper():
+def deleted():
     index = Lb.curselection()[0]
     Lb.delete(index)      
 
-def deleted():
+def ():
     index = Lb.curselection()[0]
     E1=pole1.get()
     E2=pole2.get()
@@ -30,6 +49,8 @@ def deleted():
     Lb.insert(END,result)
     pole1.delete(0,END)
     pole2.delete(0,END)
+
+
 
 # def insert():
 #     telephone = fd.askopenfilename()
@@ -44,6 +65,8 @@ def deleted():
 
 # def infa():
 #     pass
+
+
 
 pole1 = Entry(width=23)
 pole2 = Entry(width=23)
@@ -60,7 +83,7 @@ avatarka = Button(image=img)
 but1 = Button(text="загрузить",command=create,bg="green")
 but2 = Button(text="удалить",command=poper,bg="red")
 but3 = Button(text="изменить",command=deleted,bg="blue")
-but4 = Button(text="информация",command=infa,bg="yello")
+but4 = Button(text="информация",command=infa,)
 
 l1 = Label(text="имя")
 l2 = Label(text="фамилия")
@@ -69,6 +92,8 @@ l4 = Label(text="телефон")
 l5 = Label(text="здесь аватарка")
 
 Lb = Listbox(width=45)
+
+
 
 pole1.grid(row=0,column=0)
 pole2.grid(row=1,column=0)
