@@ -3,6 +3,16 @@ root = Tk()
 from tkinter import filedialog as fd
 img = PhotoImage(file="avatar.png")
 
+import pandas as import pd
+import os
+data = {
+    'Имя': [],
+    'Фамилия': [],
+    'номер': [],
+    'emayl': [],
+    'аватарка':[]
+}
+
 massiv = [1,2,3,4,5,6]
 
 
@@ -28,7 +38,7 @@ def create():
     E4=pole4.get()
     result=E1 + " " + E2 + " *" + E3 + "*" + " - " + E4
     Lb.insert(END,result)
-    g=[x fof x in Lb]
+    Lb=[x for x in Lb]
     pole1.delefte(0,END)
     pole2.delete(0,END)
     pole3.delete(0,END)
@@ -38,17 +48,17 @@ def deleted():
     index = Lb.curselection()[0]
     Lb.delete(index)      
 
-def ():
-    index = Lb.curselection()[0]
-    E1=pole1.get()
-    E2=pole2.get()
-    E3=pole3.get()
-    E4=pole4.get()
-    Lb.delete(index)
-    result=E1 + " " + E2 + " *" + E3 + "*" + " - " + E4
-    Lb.insert(END,result)
-    pole1.delete(0,END)
-    pole2.delete(0,END)
+# def ():
+#     index = Lb.curselection()[0]
+#     E1=pole1.get()
+#     E2=pole2.get()
+#     E3=pole3.get()
+#     E4=pole4.get()
+#     Lb.delete(index)
+#     result=E1 + " " + E2 + " *" + E3 + "*" + " - " + E4
+#     Lb.insert(END,result)
+#     pole1.delete(0,END)
+#     pole2.delete(0,END)
 
 
 
