@@ -3,7 +3,7 @@ root = Tk()
 from tkinter import filedialog as fd
 img = PhotoImage(file="avatar.png")
 
-import pandas as import pd
+import pandas as  pd 
 import os
 data = {
     'Имя': [],
@@ -13,7 +13,8 @@ data = {
     'аватарка':[]
 }
 
-massiv = [1,2,3,4,5,6]
+constant = pd.DataFrame(data)
+constant.to_csv('phonebook.csv')
 
 
 
@@ -29,26 +30,27 @@ massiv = [1,2,3,4,5,6]
 # print(massiv[1].lover())
 # print(sorted(reg(massiv)))
 
-x = x.lower()
+# x = x.lower()
 
-def create():
+def sohranit():
     E1=pole1.get()
     E2=pole2.get()
     E3=pole3.get()
     E4=pole4.get()
-    result=E1 + " " + E2 + " *" + E3 + "*" + " - " + E4
-    Lb.insert(END,result)
-    Lb=[x for x in Lb]
-    pole1.delefte(0,END)
+    
+    pole1.delete(0,END)
     pole2.delete(0,END)
     pole3.delete(0,END)
     pole4.delete(0,END)
 
 def deleted():
     index = Lb.curselection()[0]
-    Lb.delete(index)      
+    
+    constant = constant.drop(index, axis = 0)
+    constant = constant.reset_index(drop=True)
+    constant.to_csv
 
-# def ():
+# def create():
 #     index = Lb.curselection()[0]
 #     E1=pole1.get()
 #     E2=pole2.get()
@@ -76,7 +78,18 @@ def deleted():
 # def infa():
 #     pass
 
+sortlist = []
+dictsort = []
 
+# with open ('example.csv','r') as f:
+#     reader = csv.DictReader(f)
+#     for row in reader:
+#         sortlist.append(row['Name']+'-'+row['last_name']+'-'+row['Nomber'])
+#     sortist = sorted(sortlist)
+#     for x in sortlist:
+#         x = x.split('-')
+#         x = {'Name':x[0], 'last_name': x[1], 'Namber':x[2]}
+#         dictsort.append(x)
 
 pole1 = Entry(width=23)
 pole2 = Entry(width=23)
@@ -93,7 +106,7 @@ avatarka = Button(image=img)
 but1 = Button(text="загрузить",command=create,bg="green")
 but2 = Button(text="удалить",command=poper,bg="red")
 but3 = Button(text="изменить",command=deleted,bg="blue")
-but4 = Button(text="информация",command=infa,)
+but4 = Button(text="информация",command=infa)
 
 l1 = Label(text="имя")
 l2 = Label(text="фамилия")
