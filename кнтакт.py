@@ -5,6 +5,11 @@ img = PhotoImage(file="avatar.png")
 
 import pandas as  pd 
 import os
+
+file = pd.read_csv('telephone.docx')
+df = pd.DataFrame(file)
+# print(str(df['номер'][3]))
+
 data = {
     'Имя': [],
     'Фамилия': [],
@@ -12,11 +17,8 @@ data = {
     'emayl': [],
     'аватарка':[]
 }
-
-constant = pd.DataFrame(data)
-constant.to_csv('phonebook.csv')
-
-
+contacts = pd.DataFrame(data)
+contacts.to_csv("phonebook.csv")
 
 # for x in massiv:
 #     print(enumerate(massiv))
@@ -32,37 +34,27 @@ constant.to_csv('phonebook.csv')
 
 # x = x.lower()
 
-def sohranit():
+def deleted():
+    index = Lb.curselection()[0]
+    
+    
+def create():
+    index = Lb.curselection()[0]
     E1=pole1.get()
     E2=pole2.get()
     E3=pole3.get()
     E4=pole4.get()
-    
+    Lb.delete(index)
+    result=E1 + " " + E2 + " *" + E3 + "*" + " - " + E4
+    contacts.loc[0]= {'Имя':'tghjk', 'Фамилия':'tghjk', 'номер':'12345678900', 'imail':'qwe@gmail.com'}
+    constant = contacts.sort_values(by='Имя')
+    constant = constant.reset_index(drop=True)
+    constant.to_csv("phones.csv")
     pole1.delete(0,END)
     pole2.delete(0,END)
-    pole3.delete(0,END)
-    pole4.delete(0,END)
 
-def deleted():
-    index = Lb.curselection()[0]
-    
-    constant = constant.drop(index, axis = 0)
-    constant = constant.reset_index(drop=True)
-    constant.to_csv
-
-# def create():
-#     index = Lb.curselection()[0]
-#     E1=pole1.get()
-#     E2=pole2.get()
-#     E3=pole3.get()
-#     E4=pole4.get()
-#     Lb.delete(index)
-#     result=E1 + " " + E2 + " *" + E3 + "*" + " - " + E4
-#     Lb.insert(END,result)
-#     pole1.delete(0,END)
-#     pole2.delete(0,END)
-
-
+def poper():
+    pass
 
 # def insert():
 #     telephone = fd.askopenfilename()
@@ -75,8 +67,8 @@ def deleted():
 #     telephone = fd.asksaveasfilename(filetypes=)
 #     f = open(telephone, "w")
 
-# def infa():
-#     pass
+def infa():
+    pass
 
 sortlist = []
 dictsort = []
